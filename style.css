@@ -111,6 +111,14 @@ h2{
 }
 
 
+.colDisplay1 input:focus{
+	background-color:rgba(153,0,102,0.2);
+	border-color:rgba(153,0,102,1);
+    box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.1) inset, 0 0 0.5em rgba(255,204,204,1);
+    outline: 0 none;
+}
+
+
 #submit{
 	margin-right: 0.4em;
 }

@@ -9,16 +9,18 @@ angular.module('myApp', ['ngMessages'])
 		 $scope.tipAverage =0;
 		 $scope.eachTip = [];
 		 
+		 
 		 $scope.cancel = function(){
 			 $scope.mealPrice=''; 
 			 $scope.tax='';
 			 $scope.tip='';
+			 
 		 }
 		 
 		 $scope.submit = function(){
-			 $scope.mealPriceShow=this.mealPrice; 
-			 $scope.taxShow=this.tax;
-			 $scope.tipShowTemp=this.tip;
+			 $scope.mealPriceShow=$scope.mealPrice; 
+			 $scope.taxShow=$scope.tax;
+			 $scope.tipShowTemp=$scope.tip;
 			 $scope.subTotal= $scope.mealPriceShow * (1 + $scope.taxShow/100);
 			 $scope.tipShow = $scope.subTotal * ($scope.tipShowTemp/100);
 			 $scope.total= $scope.subTotal + $scope.tipShow;
@@ -37,10 +39,12 @@ angular.module('myApp', ['ngMessages'])
 		 }
 		 
 		 $scope.count = function(){
-			 $scope.eachTip.push($scope.tipShow);
-			 $scope.mealCount = $scope.mealCount + 1;
-			 $scope.tipTotal = $scope.tipTotal + $scope.eachTip[$scope.mealCount-1];
-			 $scope.tipAverage = $scope.tipTotal / $scope.mealCount;
+			 if($scope.mealForm.$valid){
+				 $scope.eachTip.push($scope.tipShow);
+				 $scope.mealCount = $scope.mealCount + 1;
+				 $scope.tipTotal = $scope.tipTotal + $scope.eachTip[$scope.mealCount-1];
+				 $scope.tipAverage = $scope.tipTotal / $scope.mealCount;
+			 }
 		 }
         
      }]);
