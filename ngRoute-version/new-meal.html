@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row" id="mealDetail">
+            <h2>Please Enter the Meal Details</h2>
+            <br/>
+            <br/>
+            <br/>
+           <form name="mealForm" ng-submit="submit(); count()" class="col-xs-12" novalidate>
+                 <div class="colDisplay1">
+                    <span class="col1 col-xs-12 col-sm-6">Base Meal Price:</span>
+                    <span class="col2 col-xs-offset-1 col-xs-1 col-sm-offset-0 col-sm-1">$</span>
+                    <input class="col-xs-offset-0 col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-4 col-sm-offset-1"  type="text" ng-model="mealPrice" name="mealPrice" ng-pattern="/[-+]?[0-9]*\.?[0-9]+/" required></label>   
+                 </div>
+                 <br/>
+                 <br/>
+                 <br/>
+                 
+                 <div class="colDisplay1">
+                    <span class="col1 col-xs-12 col-sm-6">Tax Rate:</span>
+                    <span class="col2 col-xs-offset-1 col-xs-1 col-sm-offset-0 col-sm-1">%</span>
+                    <input class="col-xs-offset-0 col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-4 col-sm-offset-1"  type="text" ng-model="tax" name="tax" ng-pattern="/[-+]?[0-9]*\.?[0-9]+/" required></label>   
+                 </div>
+                 <br/>
+                 <br/>
+                 <br/>
+                 
+                 <div class="colDisplay1">
+                    <span class="col1 col-xs-12 col-sm-6">Tip Percentage:</span>
+                    <span class="col2 col-xs-offset-1 col-xs-1 col-sm-offset-0 col-sm-1">%</span>
+                    <input class="col-xs-offset-0 col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-4 col-sm-offset-1"  type="text" ng-model="tip" name="tip" ng-pattern="/[-+]?[0-9]*\.?[0-9]+/" required></label>   
+                 </div>
+                 
+                
+                 <br/>
+                 <br/>
+                 <br/>
+                 <br/>
+                 <br/>
+                 <br/>
+                 <br/>
+                 
+                 
+                <div ng-if="mealForm.mealPrice.$error.pattern" ng-messages=  			                                     "mealForm.mealPrice.$error" class="errMessage">
+                    
+                    <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;<span class="error" ng-message=                                          "pattern"><strong>Please enter a number for meal price!</strong></span>
+               </div>
+               
+               <div ng-if="mealForm.tax.$error.pattern" ng-messages=  			                                     "mealForm.tax.$error" class="errMessage">
+                    <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;<span class="error" ng-message=                                          "pattern"><strong>Please enter a number for tax!</strong></span>
+               </div>
+               
+               <div ng-if="mealForm.tip.$error.pattern" ng-messages=  			                                     "mealForm.tip.$error" class="errMessage">
+                    <span class="glyphicon glyphicon-warning-sign"></span>&nbsp;<span class="error" ng-message=                                          "pattern"><strong>Please enter a number for tip!</strong></span>
+               </div>
+               
+               
+               <br/>
+               <br/>
+               
+               
+               <div class="row">
+                   <button class="col-xs-offset-2 col-xs-4 col-xs-offset-2" type="submit" value="Submit" id="submit" ng-disabled="mealForm.$invalid" ng-class="{'forbidden': mealForm.$invalid}">Submit</button>
+                   
+                   <button class="col-xs-4" ng-click="cancel()" id="cancel">Cancel</button>
+               </div>
+               
+               
+               <br/>
+           </form>
+           
+
+    </div>    
+
+     <div id="charges" class="container">
+          <h2>Customer Charges</h2>
+          <br/>                             
+          <div class="colDisplay2">
+                <span class="col-xs-offset-1 col-xs-4">Subtotal:</span>
+                <span class="col-xs-7" type="text">{{subTotal | currency}}</span>
+          </div>
+          <br/>
+          <br/>
+          <div class="colDisplay2">
+                <span class="col-xs-offset-1 col-xs-4">Tip:</span>
+                <span class="col-xs-7" type="text">{{tipShow | currency}}</span>
+          </div>
+          <hr/>
+          <div class="colDisplay2">
+                <span class="col-xs-offset-1 col-xs-4">Total:</span>
+                <span class="col-xs-7" type="text">{{total | currency}}</span>
+          </div>
+    </div>
+
+</div>

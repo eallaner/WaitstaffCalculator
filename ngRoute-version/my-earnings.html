@@ -1,0 +1,22 @@
+ <div class="container">                    
+    <div id="earnings">
+          <h2>My Earnings Info</h2>
+          <div class="colDisplay3">
+                <span class="col-xs-7">Tip Total:</span>
+                <span class="col-xs-5" type="text">{{tipTotal | currency}}</span>
+          </div>
+      
+          <br/>
+          <div class="colDisplay3">
+                <span class="col-xs-7">Meal Count:</span>
+                <span class="col-xs-5" type="text">{{ mealCount }}</span>
+          </div>
+          
+          <br/>
+          <div class="colDisplay3">
+                <span class="col-xs-7">Average Tip per Meal:</span>
+                <span class="col-xs-5" type="text">{{tipAverage | currency}}</span>
+          </div>
+     </div>                    
+</div>
+<button ng-click="reset()" id="reset">Reset</button>

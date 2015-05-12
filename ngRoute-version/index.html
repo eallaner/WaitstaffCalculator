@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Waiter Earning Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    
+    <link href='http://fonts.googleapis.com/css?family=Delius+Swash+Caps' rel='stylesheet' type='text/css'>
+    
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body ng-app="myApp">
+    <div class="container main">
+        <h1>Waitstaff &nbsp; Calculator</h1>
+        <br/>  
+        <div class="mainBody row">
+            <ul class="nav navbar-nav" ng-controller="generalCtrl">
+              <li  class="col-xs-4 col-md-offset-0 col-md-2" ng-class="{ navActive: isActive('/')}">
+                  <a href="#/">Home</a>
+              </li>
+              <li class="col-xs-4 col-md-offset-0 col-md-3"  ng-class="{ navActive: isActive('/new-meal')}">
+                   <a href="#/new-meal">New Meal</a>
+              </li>
+              <li class="col-xs-4 col-md-offset-0 col-md-3"  ng-class="{ navActive: isActive('/my-earnings')}">
+                  <a href="#/my-earnings">My Earnings</a>
+              </li>
+            </ul>
+            
+            
+            <div ng-view class="contentBody">
+          
+            <div>
+            
+        </div>
+   </div>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src="myApp.js" type="text/javascript"></script>
+<script src="touchScreen.js" type="text/javascript"></script>
+<script src="angular-messages.js" type="text/javascript"></script>
+<script src="angular-route.js" type="text/javascript"></script>
+<script src="angular-animate.js" type="text/javascript"></script>
+
+</body>
+</html>
