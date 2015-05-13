@@ -36,6 +36,19 @@ angular.module('myApp', ['ngMessages', 'ngAnimate', 'ngRoute'])
 	         		 
 	}])
 	.controller('mealCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
+		     if(!$rootScope.initView){
+             	 $rootScope.subTotal = 0;
+				 $rootScope.tipShow = 0;
+			 	 $rootScope.total = 0;
+				 $rootScope.tipTotal =0;
+			     $rootScope.mealCount = 0;
+			     $rootScope.tipAverage = 0;
+			     $rootScope.mealCount = 0;
+
+			     $rootScope.initView = true;
+             }
+
+
 		     $rootScope.initView = true;
 
 		     $scope.cancel = function(){
